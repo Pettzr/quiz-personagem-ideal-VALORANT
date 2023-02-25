@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz VALORANT</title>
+    <style>
+        
+        #pergunta{
+            padding-top: 2%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cards {
+            background-size: cover;
+            height: 80vh;
+            border: 2px solid black;
+        }
+
+        button {
+            position: center;
+            margin-top: 10%;
+            background-color: rgb(236, 234, 225);
+            width: 40vw;
+            height: 10vh;
+            margin-left: 1vw;
+            border-radius: 20px;
+            font-size: 20px;
+        }
+
+        button:hover{
+            background-color: rgb(236, 206, 120);
+        }
+        @font-face{
+            font-family: 'Valorant Font';
+            src: url('C:/Users/peter/Desktop/progamação vrau/Quiz VALORANT/Valorant Font.ttf') format('truetype');
+        }
+
+        body {
+            
+            background-image: url('https://images.hdqwalls.com/wallpapers/valorant-logo-4k-q2.jpg');
+            background-size: 100% auto;
+            font-family: 'Valorant Font', Helvetica;
+            color: rgb(236, 234, 225);
+            -webkit-text-stroke: 1px black;
+            font-size: 20px;
+            text-align: center;
+            
+        }
+
+        @media (max-width: 600px)   {       
+            body {
+            
+            background-image: url('https://images.hdqwalls.com/wallpapers/valorant-logo-4k-q2.jpg');
+            background-size: 1000px 500px;
+            background-position-x: center;
+            font-size: 17px;
+            background-position-y: -420px ;
+            font-family: 'Valorant Font', Helvetica;
+            text-align: center;
+            
+            }
+            button{
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body id="body"> 
+    <h1>
+        
+        <div id="pergunta">
+            Saiba qual o seu boneco ideal no Valorant!
+        <button id="inc" > COMEÇAR </button>
+
+        </div>
+        
+    </h1> 
+</body>
+
+
+    <script>
+
+ var divPergunta = document.getElementById("pergunta")
+ var body = document.getElementById("body")
+
+
+ var inicio = document.getElementById("inc")
+
+ inicio.addEventListener("click", function (){
+    firQ ()
+})
+
+let boneco = []
+
+function firQ () {
+    divPergunta.textContent = "Voce prefere um estilo de jogo mais agressivo ou passivo?"
+
+    botao1A = document.createElement("button")
+    botao1A.innerHTML = "AGRESSIVO"
+    divPergunta.appendChild(botao1A)
+
+    botao1A.addEventListener("click", function (){
+    boneco[0] = 'A' ;
+    segQ ();
+    })
+    
+
+    botao1B = document.createElement("button")
+    botao1B.innerHTML = "PASSIVO"
+    divPergunta.appendChild(botao1B)
+
+    botao1B.addEventListener("click", function (){
+    boneco[0] = "B";
+    segQ ()
+})
+
+}  
+
+
+function segQ () {
+    divPergunta.textContent = "Voce prefere um boneco com habilidades focadas em voce ou em ajudar seu time?"
+
+    botao2A = document.createElement("button")
+    botao2A.innerHTML = "FOCADO EM MIM"
+    divPergunta.appendChild(botao2A)
+
+    botao2A.addEventListener("click", function(){
+        boneco[1] = "D"
+        terQ();
+    })
+
+    botao2B = document.createElement("button")
+    botao2B.innerHTML = "FOCADO NO TIME"
+    divPergunta.appendChild(botao2B)
+
+    botao2B.addEventListener("click", function(){
+        boneco [1] = "E"
+        terQ();
+
+    })
+
+}  
+    
+    function terQ (){
+
+        divPergunta.textContent = "Voce prefer fazer jogadas arriscadas ou inteligentes?"
+
+        botao3A = document.createElement("button")
+        botao3A.innerHTML = "ARRISCADAS"
+        divPergunta.appendChild(botao3A)
+
+        botao3A.addEventListener("click", function(){
+            boneco[2] = "G"
+
+            quarQ();
+        })
+
+        botao3B = document.createElement("button")
+        botao3B.innerHTML = "INTELIGENTES"
+        divPergunta.appendChild(botao3B)
+
+        botao3B.addEventListener("click", function(){
+            boneco[2] = "H"
+            quarQ();
+        })
+
+
+    }
+
+    function quarQ (){
+
+    divPergunta.textContent = "Voce prefere jogar sozinho ou com o time?"
+
+    botao4A = document.createElement("button")
+    botao4A.innerHTML = "SOZINHO"
+    divPergunta.appendChild(botao4A)
+
+    botao4A.addEventListener("click", function(){
+        boneco[3] = "J"
+        quinQ();
+    })
+
+    botao4B = document.createElement("button")
+    botao4B.innerHTML = "COM O TIME"
+    divPergunta.appendChild(botao4B)
+
+    botao4B.addEventListener("click", function(){
+        boneco[3] = "K"
+        quinQ();
+    })
+
+
+    }
+
+    function quinQ (){
+
+    divPergunta.textContent = 'Voce prefere que sua ult seja para ganhar espaco para o time ou mais individual?'
+
+    botao5A = document.createElement("button")
+    botao5A.innerHTML = "GANHAR ESPAÇO PARA O TIME"
+    divPergunta.appendChild(botao5A)
+
+    botao5A.addEventListener("click", function(){
+        boneco[4] = "M"
+        sexQ ();
+    })
+
+    botao5B = document.createElement("button")
+    botao5B.innerHTML = "GANHAR ESPAÇO INDIVIDUAL"
+    divPergunta.appendChild(botao5B)
+
+    botao5B.addEventListener("click", function(){
+        boneco[4] = "N"
+        sexQ ();
+    })
+
+    }
+
+    function sexQ (){
+
+    divPergunta.textContent = "Voce prefere bonecos com mecanicas que é preciso treinar para jogar bem ou bonecos simples e faceis de jogar?"
+
+    botao6A = document.createElement("button")
+    botao6A.innerHTML = "BONECOS COMPLEXOS"
+    divPergunta.appendChild(botao6A)
+
+    botao6A.addEventListener("click", function(){
+        boneco[5] = "P"
+        setQ();
+    })
+
+    botao6B = document.createElement("button")
+    botao6B.innerHTML = "BONECOS SIMPLES"
+    divPergunta.appendChild(botao6B)
+
+    botao6B.addEventListener("click", function(){
+        boneco[5] = "Q"
+        setQ();
+    })
+
+    }
+
+
+    function setQ (){
+
+    divPergunta.textContent = "no round pistol voce prefere gastar com habilidades ou com uma pistola melhor?"
+
+    botao7A = document.createElement("button")
+    botao7A.innerHTML = "HABILIDADES"
+    divPergunta.appendChild(botao7A)
+
+    botao7A.addEventListener("click", function(){
+        boneco[6]  = "S"
+        octQ()
+    })
+
+    botao7B = document.createElement("button")
+    botao7B.innerHTML = "PISTOLA"
+    divPergunta.appendChild(botao7B)
+
+    botao7B.addEventListener("click", function(){
+        boneco[6] = "T"
+        octQ()
+    })
+
+    }
+
+    function octQ (){
+
+    divPergunta.textContent = "Voce prefere que sua habilidade principal de vantagem para voce, ou desvantagem para o adversario?"
+
+    botao8A = document.createElement("button")
+    botao8A.innerHTML = "VANTAGEM PARA MIM"
+    divPergunta.appendChild(botao8A)
+
+    botao8A.addEventListener("click", function(){
+        boneco[7] = "V"
+        finale();
+        
+    })
+
+    botao8B = document.createElement("button")
+    botao8B.innerHTML = "DESVANTAGEM PARA O ADVERSARIO"
+    divPergunta.appendChild(botao8B)
+
+    botao8B.addEventListener("click", function(){
+        boneco[7] = "W"
+        finale();
+        
+    })
+
+    }
+
+
+        personagens = [
+
+    brimStone   = ['B','E','H','K','M','Q','T','V'],
+    phoenix     = ['A','D','G','K','N','Q','T','W'],
+    sage        = ['B','E','H','K','M','Q','S','V'],
+    sova        = ['A','E','H','K','N','P','S','V'],
+    viper       = ['B','E','H','J','M','P','S','W'],
+    cypher      = ['B','D','H','J','M','P','T','V'],
+    reyna       = ['A','D','G','K','N','Q','T','V'],
+    killJoy     = ['B','D','H','J','M','P','S','W'],
+    breach      = ['A','E','G','K','M','Q','T','W'],
+    omen        = ['A','E','H','J','N','P','T','V'],
+    jett        = ['A','D','G','K','N','Q','T','V'],
+    raze        = ['A','D','G','K','N','P','T','W'],
+    skye        = ['A','E','G','K','M','Q','T','W'],
+    yoru        = ['A','D','G','K','N','P','T','V'],
+    astra       = ['B','E','H','J','M','P','T','W'],
+    kayo        = ['A','E','G','K','M','Q','S','W'],
+    chamber     = ['A','D','G','J','N','Q','T','V'],
+    neon        = ['A','D','G','K','N','P','T','V'],
+    fade        = ['A','E','G','K','M','Q','S','V'],
+    harbor      = ['B','E','H','K','M','Q','T','W']
+
+    ]
+
+        nomePersonagens = [
+
+    'brimStone',
+    'phoenix',
+    'sage',
+    'sova', 
+    'viper',    
+    'cypher',   
+    'reyna',
+    'killJoy',  
+    'breach',  
+    'omen',  
+    'jett',  
+    'raze',  
+    'skye',  
+    'yoru',  
+    'astra',    
+    'kayo',  
+    'chamber',  
+    'neon',  
+    'fade',  
+    'harbor'
+    ]
+
+        imgPersonagens = [
+
+    'https://titles.trackercdn.com/valorant-api/playercards/9740ddf5-0f1e-46c3-be8c-01b319680278/largeart.png',
+    'https://titles.trackercdn.com/valorant-api/playercards/ba3f6dea-9040-4014-b44e-2a856e030f8f/largeart.png',
+    'https://titles.trackercdn.com/valorant-api/playercards/910ace70-4d3b-3c53-2c55-5f9fa179caa8/largeart.png',
+    'https://titles.trackercdn.com/valorant-api/playercards/b03e3577-4f31-ae08-b9b7-4eb587fd13c3/largeart.png', 
+    'https://titles.trackercdn.com/valorant-api/playercards/2f7fd4ed-4b6b-b3fc-0658-18a58f61581b/largeart.png',    
+    'https://titles.trackercdn.com/valorant-api/playercards/58314922-434e-6ed6-0625-cc9e137f7ea0/largeart.png',   
+    'https://titles.trackercdn.com/valorant-api/playercards/e9dcc215-4b83-90e4-ba3b-4f8d32568eb6/largeart.png',
+    'https://titles.trackercdn.com/valorant-api/playercards/e9021053-495a-e500-9f57-b59f2f94d01b/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/e99656df-bbb0-4db4-867b-29a31cbe2e51/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/504f38e4-4874-845c-ccb6-a3aec7a3a1eb/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/ab5a453a-f726-4e04-b277-f30d56a8b152/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/fbe4935e-421d-4d5d-9ea8-3fb5218d1d1d/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/1f28ac65-411d-619a-ed18-5cafda3acba7/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/14a59263-4028-9a76-a65e-c8891387db0c/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/f3978390-4493-e7ae-9aea-bc9fac8b44cd/largeart.png',    
+    'https://titles.trackercdn.com/valorant-api/playercards/bc4443d5-449f-b5eb-a179-4c9ff332294b/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/f31491e7-4642-ea8b-87fa-ed8fd73e44cf/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/cec2424b-483e-da2e-4369-f0a8822f96b5/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/3d3e270e-4c89-ea1f-2bea-32a40a21dd75/largeart.png',  
+    'https://titles.trackercdn.com/valorant-api/playercards/518eabc6-406d-1c71-af64-d7acfc985125/largeart.png'
+    ]
+
+    //function compararResposta (array1, array2) 
+function finale () {
+
+divPergunta.innerHTML = ''
+
+body.style.fontSize = '16px'
+body.style.color = 'rgb(236, 234, 225)'
+body.style.webkitTextStroke = '0px'
+divPergunta.style.marginTop = '-5%'
+divPergunta.style.justifyContent = 'space-around'
+divPergunta.style.rowGap = '20px'
+
+
+ var img1 = document.createElement('img')
+ var img2 = document.createElement('img')
+ var img3 = document.createElement('img')
+ var img4 = document.createElement('img')
+
+ var leg1 = document.createElement('figcaption')
+ var leg2 = document.createElement('figcaption')
+ var leg3 = document.createElement('figcaption')
+ var leg4 = document.createElement('figcaption')
+
+ var fig1 = document.createElement('figure')
+ var fig2 = document.createElement('figure')
+ var fig3 = document.createElement('figure')
+ var fig4 = document.createElement('figure')
+
+ fig1.appendChild(img1);
+ fig1.appendChild(leg1);
+
+ fig2.appendChild(img2);
+ fig2.appendChild(leg2);
+
+ fig3.appendChild(img3);
+ fig3.appendChild(leg3);
+
+ fig4.appendChild(img4);
+ fig4.appendChild(leg4);
+
+ img1.className = 'cards'
+ img2.className = 'cards'
+ img3.className = 'cards'
+ img4.className = 'cards'
+
+divPergunta.appendChild(fig1)
+divPergunta.appendChild(fig2)
+divPergunta.appendChild(fig3)
+divPergunta.appendChild(fig4)
+
+    
+
+arrayUsuario = boneco
+
+arraysPersonagens = personagens
+
+
+ // Função para comparar dois arrays e retornar a porcentagem de elementos iguais
+function compararArrays(array1, array2) {
+  var quantidadeIguais = 0;
+  for (var i = 0; i < array1.length; i++) {
+    if (array2.includes(array1[i])) {
+      quantidadeIguais++;
+    }
+  }
+  return quantidadeIguais / array1.length;
+}
+
+// Função para encontrar os 3 personagens mais parecidos com o array do usuário
+function encontrarPersonagensMaisParecidos(arrayUsuario, arraysPersonagens) {
+  var resultados = [];
+  for (var i = 0; i < arraysPersonagens.length; i++) {
+    var porcentagem = compararArrays(arrayUsuario, arraysPersonagens[i]);
+    var nome = nomePersonagens[i]; // Adiciona um nome para o array de personagem
+    resultados.push({nome: nome, array: arraysPersonagens[i], porcentagem: porcentagem});
+  }
+  resultados.sort(function(a, b) { // Classifica os resultados por porcentagem em ordem decrescente
+    return b.porcentagem - a.porcentagem;
+  });
+  
+
+   return resultados.slice(0, 4); // Retorna os 4 primeiros resultados
+
+
+
+}
+
+var personagensMaisParecidos = encontrarPersonagensMaisParecidos(arrayUsuario, arraysPersonagens);
+console.log(personagensMaisParecidos);
+    
+
+imgBoneco();
+
+function imgBoneco () {
+
+p = 0
+n = 0
+
+    while (p < 5){
+
+        if (personagensMaisParecidos[p].nome == nomePersonagens[n]){
+
+            if (p == 0){
+            img1.src = imgPersonagens[n]
+            leg1.textContent = nomePersonagens[n]
+        } else if (p == 1) {
+            img2.src = imgPersonagens[n]
+            leg2.textContent = nomePersonagens[n]
+        } else if (p == 2) {
+            img3.src = imgPersonagens[n]
+            leg3.textContent = nomePersonagens[n]
+        } else if (p == 3) {
+            img4.src = imgPersonagens[n]
+            leg4.textContent = nomePersonagens[n]
+        }
+
+        p++ 
+        n = 0
+    }
+        else { n++}
+    }
+   
+  }
+
+ 
+
+
+}
+//
+
+
+/*
+AB Voce prefere um estilo de jogo mais agressivo ou passivo?
+DE Voce prefere um boneco com habilidades focadas em voce ou em ajudar seu time?
+GH Voce prefer fazer jogadas arriscadas ou inteligentes?
+JK Voce prefere jogar sozinho ou com o time?
+MN Voce prefere que sua ult seja para ganhar espaço para o time ou algo mais individual?
+PQ Você prefere bonecos com mecanicas unicas que voce precisa treinar/estudar para tirar 100% do boneco ou bonecos mais simples e faceis de jogar?
+ST no round pistol voce prefere gastar com habilidades ou com uma pistola melhor?
+VW Você prefere que sua habilidade principal de vantagem para você, ou desvantagem para o adversario?
+
+filtrar por mais afinidade
+
+NEON YORU
+KAYO BREACH SKYE
+REYNA E JETT
+*/
+
+
+    </script>
+
+
+</html>
+
+
